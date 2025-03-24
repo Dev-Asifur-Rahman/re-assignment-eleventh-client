@@ -2,7 +2,6 @@ import React, { useContext, useState } from "react";
 import { Context } from "../Context/context";
 import { signOut } from "firebase/auth";
 
-
 const NavBar = () => {
   const { user, Auth } = useContext(Context);
   const [Dropdown, setDropdown] = useState(false);
@@ -16,8 +15,9 @@ const NavBar = () => {
       .catch((error) => console.log("error occured"));
   }
   return (
-    <div className="navbar bg-base-100 shadow-sm">
+    <div className="w-full flex items-center px-2 h-16 bg-base-100 shadow-sm ">
       <div className="navbar-start">
+        {/* dropdown */}
         <div
           className="dropdown"
           tabIndex={0}
@@ -58,7 +58,7 @@ const NavBar = () => {
             </ul>
           )}
         </div>
-        <p className="text-3xl font-bold hidden md:inline lg:inline">DaisyUI</p>
+        <p className="text-3xl font-bold hidden md:inline lg:inline">LitHub</p>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
