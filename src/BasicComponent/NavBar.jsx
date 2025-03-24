@@ -15,7 +15,7 @@ const NavBar = () => {
       .catch((error) => console.log("error occured"));
   }
   return (
-    <div className="w-full flex items-center px-2 h-16 bg-base-100 shadow-sm ">
+    <div className="w-full flex items-center px-2 h-16 bg-[#E0FFFF] shadow-sm ">
       <div className="navbar-start">
         {/* dropdown */}
         <div

@@ -3,6 +3,8 @@ import { Outlet } from "react-router";
 import { ApiInstance } from "../Context/apiInstance";
 import { Context } from "../Context/context";
 import NavBar from "../BasicComponent/NavBar";
+import Footer from "../BasicComponent/Footer";
+
 
 const MainHome = () => {
   const { user } = useContext(Context);
@@ -28,6 +30,7 @@ const MainHome = () => {
     <div>
       <NavBar></NavBar>
       <Outlet></Outlet>
+      <Footer></Footer>
     </div>
   );
 };
