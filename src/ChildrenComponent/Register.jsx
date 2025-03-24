@@ -45,7 +45,6 @@ const Register = () => {
     </svg>
   );
 
-
   function register(e) {
     e.preventDefault();
     const target = e.target;
@@ -116,7 +115,7 @@ const Register = () => {
             </div>
 
             <div className="field">
-              <label htmlFor="username">Username</label>
+              <label htmlFor="username">Email</label>
               <br />
               <i className="bx bx-envelope"></i>
               <input
