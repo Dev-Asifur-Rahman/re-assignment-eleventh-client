@@ -1,10 +1,13 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../Context/context";
 import { signOut } from "firebase/auth";
+import { NavLink, useNavigate } from "react-router";
 
 const NavBar = () => {
   const { user, Auth } = useContext(Context);
   const [Dropdown, setDropdown] = useState(false);
+  const login = useNavigate();
+
 
   function signout() {
     signOut(Auth)
@@ -15,7 +18,7 @@ const NavBar = () => {
       .catch((error) => console.log("error occured"));
   }
   return (
-    <div className="w-full flex items-center px-2 h-16 bg-[#E0FFFF] shadow-sm ">
+    <div className="w-full flex items-center px-2 h-16 bg-[#C8FFC9] shadow-sm ">
       <div className="navbar-start">
         {/* dropdown */}
         <div
@@ -58,35 +61,43 @@ const NavBar = () => {
             </ul>
           )}
         </div>
-        <p className="text-3xl font-bold hidden md:inline lg:inline">LitHub</p>
+        <p  className="text-3xl font-extrabold hidden md:inline lg:inline text-[#8a8be9]">LitHub</p>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          <li>
-            <a>Item 1</a>
-          </li>
-          <li>
-            <details>
-              <summary>Parent</summary>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </details>
-          </li>
-          <li>
-            <a>Item 3</a>
-          </li>
+        <ul id="navActive" className="flex items-center gap-2">
+          {user && (
+            <li>
+              <NavLink to={"/allbooks"}>All Books</NavLink>
+            </li>
+          )}
+
+          {user && (
+            <li>
+              <NavLink to={"/addbook"}>Add Book</NavLink>
+            </li>
+          )}
+          {user && (
+            <li>
+              <NavLink to={"/borrowedbooks"}>Borrowed</NavLink>
+            </li>
+          )}
         </ul>
       </div>
       <div className="navbar-end">
-        <button onClick={signout} className="btn">
-          {user ? "SignOut" : "SignIn"}
-        </button>
+        {user ? (
+          <button onClick={signout} className="btn-hover color-5">
+            SignOut
+          </button>
+        ) : (
+          <button
+            onClick={() => {
+              login("/login");
+            }}
+            className="btn-hover color-5"
+          >
+            SignIn
+          </button>
+        )}
       </div>
     </div>
   );

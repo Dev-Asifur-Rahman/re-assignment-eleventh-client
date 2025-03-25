@@ -3,15 +3,16 @@ import "./App.css";
 import { router } from "./Router";
 import { Context } from "./Context/context";
 import { Auth } from "./Firebase/firebase";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { ApiInstance } from "./Context/apiInstance";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   const [Loading, setLoading] = useState(true);
   const [user, setUser] = useState(null);
-  
-  // onAuthStateChange 
+
+  // onAuthStateChange
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(Auth, (currentUser) => {
       if (currentUser) {
@@ -46,13 +47,15 @@ function App() {
   const contextProvider = {
     Auth,
     Loading,
-    user
+    user,
+    setLoading,
   };
-
+  
   return (
     <>
       <Context.Provider value={contextProvider}>
         <RouterProvider router={router}></RouterProvider>
+        <Toaster></Toaster>
       </Context.Provider>
     </>
   );
