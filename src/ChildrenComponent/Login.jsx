@@ -51,7 +51,7 @@ const Login = () => {
   const login = (e) => {
     e.preventDefault();
     const target = e.target;
-    const email = target.name.value;
+    const email = target.email.value;
     const password = target.password.value;
     signInWithEmailAndPassword(Auth, email, password)
       .then((res) => console.log("logged in"))
@@ -87,15 +87,15 @@ const Login = () => {
           <h1 className="call-to-action">Login</h1>
           <form onSubmit={login}>
             <div className="field">
-              <label htmlFor="username">Username</label>
+              <label htmlFor="username">Email</label>
               <br />
               <i className="bx bx-user"></i>
               <input
                 type="text"
                 id="username"
-                name="name"
+                name="email"
                 required
-                placeholder="type your username"
+                placeholder="type your email"
               />
             </div>
 
