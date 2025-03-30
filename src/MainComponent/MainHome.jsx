@@ -26,9 +26,6 @@ const MainHome = () => {
 
   return (
     <div>
-      <div className="w-full text-center">
-        <button>{user ? "logout" : "login"}</button>
-      </div>
       <NavBar></NavBar>
       <Outlet></Outlet>
     </div>

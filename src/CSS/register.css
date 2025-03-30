@@ -5,28 +5,34 @@
   box-sizing: border-box;
 }
 #register-bg {
-  width: 100vw;
-
+  width: 100%;
   background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("https://i.pinimg.com/736x/ca/6b/0f/ca6b0f7177229f00b2ec1ea2f48385fd.jpg");
+  background-image: linear-gradient(
+    to right top,
+    #051937,
+    #004d7a,
+    #008793,
+    #00bf72,
+    #a8eb12
+  );
   background-repeat: no-repeat;
 }
 
 .reg-wrapper {
   min-width: 270px;
-    border-radius: 10px;
-    margin: 30px 0;
-    padding: 20px 0;
-    color: rgba(18,18,18,0.85);
-    background:rgba(255,255,255,0.3);
-    backdrop-filter: blur(13px);
-    box-shadow: 0 0 20px -2px black;
-    display:flex;
-    justify-content:center;
-    flex-direction: column;
+  border-radius: 10px;
+  margin: 30px 0;
+  padding: 20px 0;
+  color: rgba(18, 18, 18, 0.85);
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(13px);
+  box-shadow: 0 0 20px -2px black;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .call-to-action {
