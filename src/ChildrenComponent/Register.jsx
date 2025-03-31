@@ -1,12 +1,17 @@
 import React, { useContext, useState } from "react";
 import "./../CSS/register.css";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { Context } from "../Context/context";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { lottieError, lottieSuccess } from "../lottie/lottie";
+import toast from "react-hot-toast";
 
 const Register = () => {
   const { Auth } = useContext(Context);
   const [Eye, setEye] = useState(false);
+  const home = useNavigate()
+
+  // toggle password icon 
   const eye = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -52,24 +57,26 @@ const Register = () => {
     const email = target.email.value;
     const password = target.password.value;
     if (password.length < 6) {
-      alert("Enter at least 6 digit");
+      toast.error("Enter at least 6 digit")
       return;
     }
     if (!/[A-Z]/.test(password)) {
-      alert("must contain uppercase letter.");
+      toast.error("must contain uppercase letter.")
       return;
     }
 
     if (!/[a-z]/.test(password)) {
-      alert("must contain lowercase letter.");
+      toast.error("must contain lowercase letter.")
       return;
     } else {
       createUserWithEmailAndPassword(Auth, email, password)
         .then((res) => {
-          alert("success");
+          lottieSuccess('Register Successfull')
+          home('/')
         })
         .catch((error) => {
-          alert("error");
+          lottieError('Something Went Wrong !')
+          target.reset()
         });
     }
   }

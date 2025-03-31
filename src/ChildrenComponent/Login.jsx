@@ -1,12 +1,19 @@
 import React, { useContext, useState } from "react";
 import "./../CSS/login.css";
-import { Link } from "react-router";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { Link, useNavigate } from "react-router";
+import {
+  GoogleAuthProvider,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+} from "firebase/auth";
 import { Context } from "../Context/context";
+import { lottieError, lottieSuccess } from "../lottie/lottie";
 
 const Login = () => {
   const [Eye, setEye] = useState(false);
-  const { Auth } = useContext(Context);
+  const { Auth,setLoading } = useContext(Context);
+  const home = useNavigate();
+  const GoogleProvider = new GoogleAuthProvider();
 
   // icon section
   const eye = (
@@ -52,12 +59,28 @@ const Login = () => {
     const target = e.target;
     const email = target.email.value;
     const password = target.password.value;
+    setLoading(true)
     signInWithEmailAndPassword(Auth, email, password)
-      .then((res) => console.log("logged in"))
+      .then((res) => {
+        lottieSuccess("LogIn Successful");
+        home("/");
+      })
       .catch((error) => {
-        console.log("failed to log in");
+        lottieError("LogIn Failed");
       });
   };
+
+  function googleLogin() {
+    setLoading(true)
+    signInWithPopup(Auth, GoogleProvider)
+      .then((res) => {
+        lottieSuccess("LogIn Seccessful");
+        home("/");
+      })
+      .catch((error) => {
+        lottieError("LogIn Failed");
+      });
+  }
 
   return (
     <div id="login-container">
@@ -125,7 +148,7 @@ const Login = () => {
             Or Sign Up Using
             <div className="social-links">
               <i className="bx bxl-facebook"></i>
-              <i className="bx bxl-google"></i>
+              <i onClick={googleLogin} className="bx bxl-google"></i>
               <i className="bx bxl-twitter"></i>
             </div>
           </div>
