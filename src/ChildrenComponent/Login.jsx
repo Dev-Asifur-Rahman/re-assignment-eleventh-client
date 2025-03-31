@@ -8,8 +8,7 @@ const Login = () => {
   const [Eye, setEye] = useState(false);
   const { Auth } = useContext(Context);
 
-
-  // icon section 
+  // icon section
   const eye = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -125,8 +124,8 @@ const Login = () => {
           <div className="alternate-logins">
             Or Sign Up Using
             <div className="social-links">
-              <i className="bx bxl-google"></i>
               <i className="bx bxl-facebook"></i>
+              <i className="bx bxl-google"></i>
               <i className="bx bxl-twitter"></i>
             </div>
           </div>

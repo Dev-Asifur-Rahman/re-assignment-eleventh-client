@@ -6,34 +6,26 @@
 }
 #register-bg {
   width: 100%;
+  padding: 30px 20px;
   background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(
-    to right top,
-    #051937,
-    #004d7a,
-    #008793,
-    #00bf72,
-    #a8eb12
-  );
-  background-repeat: no-repeat;
+  background-color: #f0f8ea;
 }
 
 .reg-wrapper {
   min-width: 270px;
-  border-radius: 10px;
-  margin: 30px 0;
-  padding: 20px 0;
-  color: rgba(18, 18, 18, 0.85);
-  background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(13px);
-  box-shadow: 0 0 20px -2px black;
+  border-radius: 12px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px); 
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6); 
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
+
 
 .call-to-action {
   text-align: center;
