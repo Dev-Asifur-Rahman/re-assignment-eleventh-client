@@ -81,7 +81,7 @@ const Footer = () => {
             <h3 className="mb-4 text-lg text-gray-500 uppercase">
               Newsletter signup
             </h3>
-            <section className="flex">
+            {/* <section className="flex">
               <input
                 type="text"
                 className="p-2 w-[180px] text-black outline outline-gray-300"
@@ -94,7 +94,7 @@ const Footer = () => {
               >
                 Submit
               </button>
-            </section>
+            </section> */}
           </div>
         </div>
 

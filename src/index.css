@@ -78,8 +78,14 @@ body {
   box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
 }
 
+#navActive li a{
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+}
+
 #navActive li a.active {
-  text-decoration: underline;
+  color: black;
 }
 
 .component-bg{

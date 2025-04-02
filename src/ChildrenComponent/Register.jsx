@@ -108,6 +108,7 @@ const Register = () => {
           <h1 className="call-to-action">Register</h1>
 
           <form onSubmit={register}>
+            {/* name  */}
             <div className="field">
               <label htmlFor="username">Username</label>
               <br />
@@ -120,7 +121,7 @@ const Register = () => {
                 placeholder="type your username"
               />
             </div>
-
+            {/* email  */}
             <div className="field">
               <label htmlFor="username">Email</label>
               <br />
@@ -133,7 +134,20 @@ const Register = () => {
                 placeholder="type your email"
               />
             </div>
-
+            {/* image url  */}
+            <div className="field">
+              <label htmlFor="username">photoURL</label>
+              <br />
+              <i className="bx bx-user"></i>
+              <input
+                type="text"
+                id="username"
+                name="image"
+                required
+                placeholder="Enter PhotoURL"
+              />
+            </div>
+            {/* password  */}
             <div className="field">
               <label htmlFor="pwd">Password</label>
               <br />
