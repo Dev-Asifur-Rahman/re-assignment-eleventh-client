@@ -78,7 +78,21 @@ body {
   box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
 }
 
-
-#navActive li a.active{
+#navActive li a.active {
   text-decoration: underline;
+}
+
+.component-bg{
+  background-color: #f0f8ea;
+}
+
+.marqueeCategoryCard {
+  width: 280px;
+  height: 180px;
+  background-color: #9dffb6;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 8px;
+  margin: 10px;
 }
