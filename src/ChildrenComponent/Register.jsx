@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import "./../CSS/register.css";
 import { Link, useNavigate } from "react-router";
 import { Context } from "../Context/context";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { lottieError, lottieSuccess } from "../lottie/lottie";
 import toast from "react-hot-toast";
 
@@ -55,6 +55,7 @@ const Register = () => {
     const target = e.target;
     const name = target.name.value;
     const email = target.email.value;
+    const image = target.image.value;
     const password = target.password.value;
     if (password.length < 6) {
       toast.error("Enter at least 6 digit")
@@ -71,6 +72,9 @@ const Register = () => {
     } else {
       createUserWithEmailAndPassword(Auth, email, password)
         .then((res) => {
+          updateProfile(Auth.currentUser,{
+            displayName:name,photoURL:image
+          })
           lottieSuccess('Register Successfull')
           home('/')
         })

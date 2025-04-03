@@ -6,17 +6,22 @@ import { Auth } from "./Firebase/firebase";
 import { useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { ApiInstance } from "./Context/apiInstance";
-import { Toaster } from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 
 function App() {
   const [Loading, setLoading] = useState(true);
   const [user, setUser] = useState(null);
+  const [borrowedBook, setBook] = useState([]);
 
   // onAuthStateChange
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(Auth, (currentUser) => {
       if (currentUser) {
         setUser(currentUser);
+        // get borrowed books by user
+        ApiInstance.get(`/borrowedbook/${currentUser.email}`)
+          .then((response) => setBook(response.data))
+          .catch((error) => toast.error("Something went wrong!"));
         if (currentUser.email) {
           const token = { email: currentUser.email };
           ApiInstance.post("/jwt", token, { withCredentials: true })
@@ -24,7 +29,6 @@ function App() {
               setLoading(false);
             })
             .catch((error) => {
-              console.log("error occured");
               setLoading(false);
             });
         }
@@ -32,11 +36,9 @@ function App() {
         setUser(null);
         ApiInstance.post("/jwtout", {}, { withCredentials: true })
           .then((res) => {
-            console.log(res.data);
             setLoading(false);
           })
           .catch((error) => {
-            console.log("error occurred");
             setLoading(false);
           });
       }
@@ -49,8 +51,9 @@ function App() {
     Loading,
     user,
     setLoading,
+    borrowedBook,
   };
-  
+
   return (
     <>
       <Context.Provider value={contextProvider}>
