@@ -46,7 +46,7 @@ const UpdateBook = () => {
             .then((result) => {
               if(result.data.acknowledged){
                 toast.success('Data Updated Successfully')
-                navigate('/allbooks')
+                navigate('/allbooks/all')
               }
             })
             .catch((error) => toast.error("Something Wrong!Try Again"));

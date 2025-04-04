@@ -2,9 +2,9 @@ import React, { useContext, useState } from "react";
 import { Context } from "../Context/context";
 import { signOut } from "firebase/auth";
 import { Link, NavLink, useNavigate } from "react-router";
-import 'react-tooltip/dist/react-tooltip.css'
-import { Tooltip } from 'react-tooltip'
-import personIcon from '../../public/images/personicon.svg'
+import "react-tooltip/dist/react-tooltip.css";
+import { Tooltip } from "react-tooltip";
+import personIcon from "../../public/images/personicon.svg";
 
 const NavBar = () => {
   const { user, Auth } = useContext(Context);
@@ -14,7 +14,6 @@ const NavBar = () => {
   function signout() {
     signOut(Auth)
       .then((res) => {
-        console.log("logged out");
         navigate("/");
       })
       .catch((error) => console.log("error occured"));
@@ -56,23 +55,23 @@ const NavBar = () => {
               </li>
               {user && (
                 <li onClick={() => setDropdown(false)}>
-                  <Link to={'/allbooks/all'}>All Books</Link>
+                  <Link to={"/allbooks/all"}>All Books</Link>
                 </li>
               )}
               {user && (
                 <li onClick={() => setDropdown(false)}>
-                  <Link to={'/addbook'}>Add Book</Link>
+                  <Link to={"/addbook"}>Add Book</Link>
                 </li>
               )}
               {user && (
                 <li onClick={() => setDropdown(false)}>
-                  <Link to={'/borrowedbooks'}>Borrowed</Link>
+                  <Link to={"/borrowedbooks"}>Borrowed</Link>
                 </li>
               )}
             </ul>
           )}
         </div>
-        <p  className="text-3xl font-extrabold hidden md:inline lg:inline text-white ">
+        <p className="text-3xl font-extrabold hidden md:inline lg:inline text-white ">
           LitHub
         </p>
       </div>
@@ -100,9 +99,19 @@ const NavBar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-       
-        {user &&  <img id="image_tooltip" src={user?.photoURL? user.photoURL : personIcon} className="mx-2 h-[40px] w-[40px] rounded-full " alt="image" />}
-        <Tooltip anchorSelect="#image_tooltip" content={user?.displayName? user.displayName : 'Unknown'} place="left"></Tooltip>
+        {user && (
+          <img
+            id="image_tooltip"
+            src={user?.photoURL ? user.photoURL : personIcon}
+            className="mx-2 h-[40px] w-[40px] rounded-full "
+            alt="image"
+          />
+        )}
+        <Tooltip
+          anchorSelect="#image_tooltip"
+          content={user?.displayName ? user.displayName : "Unknown"}
+          place="left"
+        ></Tooltip>
         {user ? (
           <button onClick={signout} className="btn-hover color-5">
             SignOut

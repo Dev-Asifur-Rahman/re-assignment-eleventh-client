@@ -1,12 +1,54 @@
-# React + Vite
+# **LitHub**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+LitHub is a modern and responsive library management website that allows users to browse, read, and review books. It's designed to provide a user-friendly digital library experience.
 
-Currently, two official plugins are available:
+## Live Website
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+https://lithub-library.netlify.app/
 
-## Expanding the ESLint configuration
+## Purpose
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The purpose of LitHub is to create an interactive digital library system where users can easily browse books, read them, leave ratings, and write reviews. This project also serves as a practice ground for using the MERN stack and modern React libraries.
+
+## Key Features
+
+- Book listing with categories  
+- Dynamic search and filtering  
+- Book rating system  
+- User reviews  
+- Firebase authentication  
+- Admin dashboard  
+- Fully responsive UI with Tailwind CSS & DaisyUI  
+- Animations with Lottie & Swiper  
+- Toast notifications  
+- Date handling with Day.js  
+
+## NPM Packages Used
+
+- react  
+- react-dom  
+- react-router  
+- tailwindcss  
+- daisyui  
+- firebase  
+- axios  
+- sweetalert2  
+- react-hot-toast  
+- react-tooltip  
+- swiper  
+- react-fast-marquee  
+- lottie-react  
+- dayjs  
+- @smastrom/react-rating  
+
+## Development Tools
+
+- vite  
+- @vitejs/plugin-react  
+- eslint  
+- @eslint/js  
+- eslint-plugin-react-hooks  
+- eslint-plugin-react-refresh  
+- @types/react  
+- @types/react-dom  
+- globals

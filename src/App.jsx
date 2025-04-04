@@ -19,13 +19,13 @@ function App() {
       if (currentUser) {
         setUser(currentUser);
         // get borrowed books by user
-        ApiInstance.get(`/borrowedbook/${currentUser.email}`)
-          .then((response) => setBook(response.data))
-          .catch((error) => toast.error("Something went wrong!"));
         if (currentUser.email) {
           const token = { email: currentUser.email };
           ApiInstance.post("/jwt", token, { withCredentials: true })
             .then((res) => {
+              ApiInstance.get(`/borrowedbook/${currentUser.email}`)
+                .then((response) => setBook(response.data))
+                .catch((error) => toast.error("Something went wrong!"));
               setLoading(false);
             })
             .catch((error) => {
