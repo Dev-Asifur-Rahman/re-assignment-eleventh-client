@@ -65,6 +65,9 @@ const NavBar = () => {
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul id="navActive" className="flex items-center gap-2">
+        <li>
+              <NavLink to={"/"}>Home</NavLink>
+            </li>
           {user && (
             <li>
               <NavLink to={"/allbooks"}>All Books</NavLink>
