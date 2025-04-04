@@ -2,6 +2,9 @@ import React, { useContext, useState } from "react";
 import { Context } from "../Context/context";
 import { signOut } from "firebase/auth";
 import { Link, NavLink, useNavigate } from "react-router";
+import 'react-tooltip/dist/react-tooltip.css'
+import { Tooltip } from 'react-tooltip'
+import personIcon from '../../public/images/personicon.svg'
 
 const NavBar = () => {
   const { user, Auth } = useContext(Context);
@@ -97,6 +100,9 @@ const NavBar = () => {
         </ul>
       </div>
       <div className="navbar-end">
+       
+        {user &&  <img id="image_tooltip" src={user?.photoURL? user.photoURL : personIcon} className="mx-2 h-[40px] w-[40px] rounded-full " alt="image" />}
+        <Tooltip anchorSelect="#image_tooltip" content={user?.displayName? user.displayName : 'Unknown'} place="left"></Tooltip>
         {user ? (
           <button onClick={signout} className="btn-hover color-5">
             SignOut

@@ -11,6 +11,7 @@ import BorrowedBooks from "./ChildrenComponent/BorrowedBooks";
 import Details from "./ChildrenComponent/Details";
 import { ApiInstance } from "./Context/apiInstance";
 import toast from "react-hot-toast";
+import UpdateBook from "./ChildrenComponent/UpdateBook";
 
 export const router = createBrowserRouter([
   {
@@ -72,6 +73,20 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+      {
+        path:'/updateBook/:id',
+          loader: ({ params }) => {
+            return ApiInstance.get(`/book/${params.id}`)
+              .then((response) => {
+                const book =  response.data
+                return book
+              })
+              .catch((error) => {
+                toast.error("Failed to fatch.Try Again");
+              });
+        },
+        element:<UpdateBook></UpdateBook>
+      }
     ],
   },
   {

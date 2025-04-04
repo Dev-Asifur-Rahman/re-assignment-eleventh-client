@@ -1,5 +1,5 @@
 import React from "react";
-import toast, { resolveValue } from "react-hot-toast";
+import toast from "react-hot-toast";
 import { ApiInstance } from "../Context/apiInstance";
 
 const AddBook = () => {

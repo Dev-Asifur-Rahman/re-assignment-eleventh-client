@@ -39,7 +39,7 @@ const DataCard = ({ book }) => {
           <Link to={`/bookDetails/${_id}`}>
             <button className="btn btn-primary rounded-3xl">Details</button>
           </Link>
-          <Link>
+          <Link to={`/updateBook/${_id}`}>
             <button className="btn-hover color-5">Update</button>
           </Link>
         </div>
