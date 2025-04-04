@@ -12,11 +12,9 @@ const NavBar = () => {
   const login = useNavigate();
 
   function signout() {
-    signOut(Auth)
-      .then((res) => {
-        navigate("/");
-      })
-      .catch((error) => console.log("error occured"));
+    signOut(Auth).then((res) => {
+      navigate("/");
+    });
   }
   return (
     <div className="w-full flex items-center px-2 h-16 bg-[#94ff95] shadow-sm ">
@@ -55,7 +53,7 @@ const NavBar = () => {
               </li>
               {user && (
                 <li onClick={() => setDropdown(false)}>
-                  <Link to={"/allbooks/all"}>All Books</Link>
+                  <Link to={`/allbooks/all?email=${user?.email}`}>All Books</Link>
                 </li>
               )}
               {user && (
@@ -82,7 +80,7 @@ const NavBar = () => {
           </li>
           {user && (
             <li>
-              <NavLink to={`/allbooks/all`}>All Books</NavLink>
+              <NavLink to={`/allbooks/all?email=${user?.email}`}>All Books</NavLink>
             </li>
           )}
 
@@ -102,14 +100,14 @@ const NavBar = () => {
         {user && (
           <img
             id="image_tooltip"
-            src={user?.photoURL ? user.photoURL : personIcon}
+            src={user?.photoURL ? user?.photoURL : personIcon}
             className="mx-2 h-[40px] w-[40px] rounded-full "
             alt="image"
           />
         )}
         <Tooltip
           anchorSelect="#image_tooltip"
-          content={user?.displayName ? user.displayName : "Unknown"}
+          content={user?.displayName ? user?.displayName : "Unknown"}
           place="left"
         ></Tooltip>
         {user ? (

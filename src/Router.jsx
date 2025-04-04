@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter, useLocation } from "react-router";
 import MainHome from "./MainComponent/MainHome";
 import Error from "./MainComponent/Error";
 import Home from "./ChildrenComponent/Home";
@@ -32,9 +32,12 @@ export const router = createBrowserRouter([
       },
       {
         path: "/allbooks/:category",
-        loader: ({params}) =>{
-          return ApiInstance.get(`/books/${params.category}`)
-        } ,
+        loader: async ({ params,request }) => {
+          const url = new URL(request.url);
+          const email = url.searchParams.get("email");
+          const result = await ApiInstance.get(`/books/${params.category}?email=${email}`);
+          return result;
+        },
         element: (
           <PrivateRoute>
             <AllBooks></AllBooks>
@@ -59,11 +62,13 @@ export const router = createBrowserRouter([
       },
       {
         path: "/bookDetails/:id",
-        loader: ({ params }) => {
-          return ApiInstance.get(`/book/${params.id}`)
+        loader: ({ params,request }) => {
+          const url = new URL(request.url);
+          const email = url.searchParams.get("email");
+          return ApiInstance.get(`/book/${params.id}?email=${email}`)
             .then((response) => {
-              const book =  response.data
-              return book
+              const book = response.data;
+              return book;
             })
             .catch((error) => {
               toast.error("Failed to fatch.Try Again");
@@ -76,19 +81,21 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path:'/updateBook/:id',
-          loader: ({ params }) => {
-            return ApiInstance.get(`/book/${params.id}`)
-              .then((response) => {
-                const book =  response.data
-                return book
-              })
-              .catch((error) => {
-                toast.error("Failed to fatch.Try Again");
-              });
+        path: "/updateBook/:id",
+        loader: ({ params,request }) => {
+          const url = new URL(request.url);
+          const email = url.searchParams.get("email");
+          return ApiInstance.get(`/book/${params.id}?email=${email}`)
+            .then((response) => {
+              const book = response.data;
+              return book;
+            })
+            .catch((error) => {
+              toast.error("Failed to fatch.Try Again");
+            });
         },
-        element:<UpdateBook></UpdateBook>
-      }
+        element: <UpdateBook></UpdateBook>,
+      },
     ],
   },
   {

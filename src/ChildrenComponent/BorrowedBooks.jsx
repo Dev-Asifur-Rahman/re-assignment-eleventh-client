@@ -6,7 +6,7 @@ const BorrowedBooks = () => {
   const { borrowedBook } = useContext(Context);
   const [BorrowedBook, setBook] = useState([]);
   useEffect(() => {
-    setBook([...borrowedBook]);
+    setBook(Array.isArray(borrowedBook) ? [...borrowedBook] : []);
   }, [borrowedBook]);
   return (
     <section className="component-bg p-2 md:p-4 lg:p-5">
@@ -31,7 +31,11 @@ const BorrowedBooks = () => {
             </thead>
             <tbody>
               {BorrowedBook.map((book, index) => (
-                <BorrowTable key={index} book={book} index={index+1}></BorrowTable>
+                <BorrowTable
+                  key={index}
+                  book={book}
+                  index={index + 1}
+                ></BorrowTable>
               ))}
             </tbody>
           </table>

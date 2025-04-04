@@ -1,6 +1,6 @@
 import axios from "axios";
 
 export const ApiInstance = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: "https://re-assignment-eleventh-server.vercel.app",
   withCredentials: true,
 });

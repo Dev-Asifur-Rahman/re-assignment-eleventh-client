@@ -147,7 +147,6 @@ const Register = () => {
                 type="text"
                 id="username"
                 name="image"
-                required
                 placeholder="Enter PhotoURL"
               />
             </div>

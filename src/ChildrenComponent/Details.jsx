@@ -42,7 +42,7 @@ const Details = () => {
 
   // post borrowed book on database
   function borrowBook(newBook) {
-    ApiInstance.post("/borrow", newBook)
+    ApiInstance.post(`/borrow?email=${user?.email}`, newBook)
       .then((response) => {
         if (response?.data?.acknowledged === true) {
           lottieSuccess("Borrowed Successfully");

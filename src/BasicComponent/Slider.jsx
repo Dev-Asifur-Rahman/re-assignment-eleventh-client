@@ -48,7 +48,7 @@ const Slider = () => {
         clickable: true,
       }}
       navigation={true}
-      // modules={[Autoplay, Pagination, Navigation]}
+      modules={[Autoplay, Pagination, Navigation]}
       className="mySwiper -2 lg:h-[70vh] md:h-[60vh] h-[180px] w-full "
     >
       <SwiperSlide>

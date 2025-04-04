@@ -1,9 +1,11 @@
 import { Rating, Star } from "@smastrom/react-rating";
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router";
 import "@smastrom/react-rating/style.css";
+import { Context } from "../Context/context";
 
 const DataCard = ({ book }) => {
+  const {user} = useContext(Context)
   const { _id, image, name, quantity, author_name, category, rating } = book;
   const myStyles = {
     itemShapes: Star,
@@ -24,7 +26,7 @@ const DataCard = ({ book }) => {
         <p className="text-lg font-semibold">Category : {category}</p>
         <p className="font-semibold">quantity : {quantity}</p>
         <p className="font-semibold">Author : {author_name}</p>
-        <p className="font-semibold">
+        <div className="font-semibold">
           {" "}
           {
             <Rating
@@ -34,12 +36,12 @@ const DataCard = ({ book }) => {
               readOnly
             />
           }
-        </p>
+        </div>
         <div className=" w-full flex justify-around items-center">
-          <Link to={`/bookDetails/${_id}`}>
+          <Link to={`/bookDetails/${_id}?email=${user?.email}`}>
             <button className="btn btn-primary rounded-3xl">Details</button>
           </Link>
-          <Link to={`/updateBook/${_id}`}>
+          <Link to={`/updateBook/${_id}?email=${user?.email}`}>
             <button className="btn-hover color-5">Update</button>
           </Link>
         </div>
