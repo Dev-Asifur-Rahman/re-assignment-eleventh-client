@@ -5,38 +5,38 @@ import Marquee from "react-fast-marquee";
 const CategoryMarquee = () => {
   const Category = [
     { id: 1, image: "https://i.ibb.co.com/5W83hCQ3/academyresize.png",
-        name:'Academy'
+        name:'Novel',
+        
      },
     {
       id: 2,
       image: "https://i.ibb.co.com/XrgNxZXY/biography-removebg-preview.png",
-      name:'Biography'
+      name:'Thriller',
+      
     },
     {
       id: 3,
       image: "https://i.ibb.co.com/7Nv21DtK/download-removebg-preview.png",
-      name:'Literature'
+      name:'History',
+      
     },
     {
       id: 4,
       image: "https://i.ibb.co.com/QFx49sGZ/fiction-removebg-preview.png",
-      name:'Fiction'
+      name:'Drama',
+      
     },
     {
       id: 5,
       image: "https://i.ibb.co.com/sdkqMMB7/history-removebg-preview.png",
-      name:'History'
+      name:'Sci-Fi',
     },
     {
       id: 6,
       image: "https://i.ibb.co.com/xtJGKCZK/reference-removebg-preview.png",
-      name:'Reference'
-    },
-    {
-      id: 7,
-      image: "https://i.ibb.co.com/qFg3nMQJ/science-removebg-preview.png",
-      name:'Science'
-    },
+      name:'Mystery',
+      
+    }
   ];
 
   return (

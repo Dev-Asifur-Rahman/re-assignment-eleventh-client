@@ -5,19 +5,41 @@ import TableSection from "../BasicComponent/TableSection";
 
 const AllBooks = () => {
   const allBooks = useLoaderData();
-  const [dataView, setdataView] = useState("card");
+  const [dataView, setDataView] = useState("card");
   const [Book, setBook] = useState([]);
-  useEffect(()=>{
-    if(allBooks?.data?.data?.length > 0){
-      setBook(allBooks.data.data)
+  const [originalBook, setOriginalBook] = useState([]);
+
+  useEffect(() => {
+    if (allBooks?.data?.data?.length > 0) {
+      setBook(allBooks.data.data);
+      setOriginalBook(allBooks.data.data);
     }
-  },[])
-  if(Book.length === 0){
-    return <p>No Data Found</p>
+  }, [allBooks]);
+
+  // available book function
+  function availableBook() {
+    const availableBooks = originalBook.filter((book) => book.quantity > 0);
+    setBook(availableBooks);
   }
-  else{
-    return dataView === 'card'? <CardSection setdataView={setdataView} allBook={Book}></CardSection> : <TableSection setdataView={setdataView} allBook={Book}></TableSection>
-  }
+  return (
+    <section className="w-full">
+      {Book.length === 0 ? (
+        <p>No Data Found</p>
+      ) : dataView === "card" ? (
+        <CardSection
+          setdataView={setDataView}
+          availableBook={availableBook}
+          allBook={Book}
+        ></CardSection>
+      ) : (
+        <TableSection
+          setdataView={setDataView}
+          availableBook={availableBook}
+          allBook={Book}
+        ></TableSection>
+      )}
+    </section>
+  );
 };
 
 export default AllBooks;

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import TableCard from "./TableCard";
 
-const TableSection = ({ allBook,setdataView }) => {
+const TableSection = ({ allBook,setdataView,availableBook }) => {
   const [Books, setBook] = useState([]);
   useEffect(() => {
     setBook(allBook);
@@ -11,6 +11,9 @@ const TableSection = ({ allBook,setdataView }) => {
       <div className="overflow-x-auto">
         <p className="text-2xl font-bold md:text-3xl lg:text-4xl text-center my-3">
           Books
+        </p>
+        <p onClick={availableBook} className="text-xl font-bold text-blue-500 hover:underline text-center my-3 hover:cursor-pointer">
+          See available Books
         </p>
         <p onClick={()=>setdataView('card')} className="text-xl font-semibold hover:underline text-center cursor-pointer my-2">Card View</p>
         <table className="table">

@@ -31,8 +31,10 @@ export const router = createBrowserRouter([
         element: <Register></Register>,
       },
       {
-        path: "/allbooks",
-        loader: () => ApiInstance.get("/books"),
+        path: "/allbooks/:category",
+        loader: ({params}) =>{
+          return ApiInstance.get(`/books/${params.category}`)
+        } ,
         element: (
           <PrivateRoute>
             <AllBooks></AllBooks>

@@ -56,7 +56,7 @@ const NavBar = () => {
               </li>
               {user && (
                 <li onClick={() => setDropdown(false)}>
-                  <Link to={'/allbooks'}>All Books</Link>
+                  <Link to={'/allbooks/all'}>All Books</Link>
                 </li>
               )}
               {user && (
@@ -83,7 +83,7 @@ const NavBar = () => {
           </li>
           {user && (
             <li>
-              <NavLink to={"/allbooks"}>All Books</NavLink>
+              <NavLink to={`/allbooks/all`}>All Books</NavLink>
             </li>
           )}
 
