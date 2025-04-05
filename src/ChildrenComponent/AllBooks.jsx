@@ -5,7 +5,7 @@ import TableSection from "../BasicComponent/TableSection";
 
 const AllBooks = () => {
   const allBooks = useLoaderData();
-  const [dataView, setdataView] = useState("table");
+  const [dataView, setdataView] = useState("card");
   const [Book, setBook] = useState([]);
   useEffect(()=>{
     if(allBooks?.data?.data?.length > 0){

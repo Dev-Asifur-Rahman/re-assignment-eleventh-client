@@ -10,6 +10,7 @@ import AddBook from "./ChildrenComponent/AddBook";
 import BorrowedBooks from "./ChildrenComponent/BorrowedBooks";
 import Details from "./ChildrenComponent/Details";
 import { ApiInstance } from "./Context/apiInstance";
+import toast from "react-hot-toast";
 
 export const router = createBrowserRouter([
   {
@@ -30,7 +31,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/allbooks",
-        loader : ()=> ApiInstance.get('/books'),
+        loader: () => ApiInstance.get("/books"),
         element: (
           <PrivateRoute>
             <AllBooks></AllBooks>
@@ -46,7 +47,7 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "/borrowedooks",
+        path: "/borrowedbooks",
         element: (
           <PrivateRoute>
             <BorrowedBooks></BorrowedBooks>
@@ -55,6 +56,16 @@ export const router = createBrowserRouter([
       },
       {
         path: "/bookDetails/:id",
+        loader: ({ params }) => {
+          return ApiInstance.get(`/book/${params.id}`)
+            .then((response) => {
+              const book =  response.data
+              return book
+            })
+            .catch((error) => {
+              toast.error("Failed to fatch.Try Again");
+            });
+        },
         element: (
           <PrivateRoute>
             <Details></Details>
