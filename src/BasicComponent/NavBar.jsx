@@ -1,13 +1,12 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../Context/context";
 import { signOut } from "firebase/auth";
-import { NavLink, useNavigate } from "react-router";
+import { Link, NavLink, useNavigate } from "react-router";
 
 const NavBar = () => {
   const { user, Auth } = useContext(Context);
   const [Dropdown, setDropdown] = useState(false);
   const login = useNavigate();
-
 
   function signout() {
     signOut(Auth)
@@ -18,7 +17,7 @@ const NavBar = () => {
       .catch((error) => console.log("error occured"));
   }
   return (
-    <div className="w-full flex items-center px-2 h-16 bg-[#C8FFC9] shadow-sm ">
+    <div className="w-full flex items-center px-2 h-16 bg-[#94ff95] shadow-sm ">
       <div className="navbar-start">
         {/* dropdown */}
         <div
@@ -50,24 +49,35 @@ const NavBar = () => {
             >
               {/* 2. Added onClick to each <li> to close the dropdown */}
               <li onClick={() => setDropdown(false)}>
-                <a>Item 1</a>
+                <Link>Home</Link>
               </li>
-              <li onClick={() => setDropdown(false)}>
-                <a>Item 2</a>
-              </li>
-              <li onClick={() => setDropdown(false)}>
-                <a>Item 3</a>
-              </li>
+              {user && (
+                <li onClick={() => setDropdown(false)}>
+                  <Link to={'/allbooks'}>All Books</Link>
+                </li>
+              )}
+              {user && (
+                <li onClick={() => setDropdown(false)}>
+                  <Link to={'/addbook'}>Add Book</Link>
+                </li>
+              )}
+              {user && (
+                <li onClick={() => setDropdown(false)}>
+                  <Link to={'/borrowedbooks'}>Borrowed</Link>
+                </li>
+              )}
             </ul>
           )}
         </div>
-        <p  className="text-3xl font-extrabold hidden md:inline lg:inline text-[#8a8be9]">LitHub</p>
+        <p  className="text-3xl font-extrabold hidden md:inline lg:inline text-white ">
+          LitHub
+        </p>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul id="navActive" className="flex items-center gap-2">
-        <li>
-              <NavLink to={"/"}>Home</NavLink>
-            </li>
+          <li>
+            <NavLink to={"/"}>Home</NavLink>
+          </li>
           {user && (
             <li>
               <NavLink to={"/allbooks"}>All Books</NavLink>
