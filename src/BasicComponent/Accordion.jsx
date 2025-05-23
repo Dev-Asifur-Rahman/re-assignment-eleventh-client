@@ -14,25 +14,25 @@ const Accordion = () => {
     },
     {
       image: lottieTwo,
-      question: "How do I create an account?",
+      question: " How can I borrow a book from LitHub?",
       answer:
-        'Click the "Sign Up" button in the top right corner and follow the registration process.',
+        "To borrow a book, simply log in to your account, browse the book you want, and click on the Borrow button. If the book is available, it will be added to your borrowed list instantly.",
     },
     {
       image: lottieThree,
-      question: "How do I create an account?",
+      question: " How do I know if a book is popular or highly rated?",
       answer:
-        'Click the "Sign Up" button in the top right corner and follow the registration process.',
+        "You can check the average rating and number of reviews displayed on each book card. Popular books also appear in the Top Rated or Trending sections on the homepage.",
     },
     {
       image: lottieFour,
-      question: "How do I create an account?",
+      question: "Is there a limit to how many books I can borrow at once?",
       answer:
-        'Click the "Sign Up" button in the top right corner and follow the registration process.',
+        "Yes, to ensure fair access, each user can borrow up to 3 books at a time. Once you return a book, you can borrow another immediately.",
     },
   ];
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 my-6">
       {lottieObject.map((lottie, index) => (
         <div
           key={index}

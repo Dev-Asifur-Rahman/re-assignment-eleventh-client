@@ -1,6 +1,6 @@
 const Heading = ({head,body}) => {
   return (
-    <div className="text-center px-2 py-4 md:py-4 lg:py-6">
+    <div className="text-center bg-white w-full px-2 py-4 md:py-4 lg:py-6">
       <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
         {head}
       </h1>

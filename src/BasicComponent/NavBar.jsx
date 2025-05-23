@@ -17,7 +17,8 @@ const NavBar = () => {
     });
   }
   return (
-    <div className="w-full flex items-center px-2 h-16 bg-[#94ff95] shadow-sm ">
+    <div className="w-full flex items-center px-2 h-16 bg-white ">
+      
       <div className="navbar-start">
         {/* dropdown */}
         <div
@@ -51,11 +52,11 @@ const NavBar = () => {
               <li onClick={() => setDropdown(false)}>
                 <Link>Home</Link>
               </li>
-              {user && (
-                <li onClick={() => setDropdown(false)}>
-                  <Link to={`/allbooks/all?email=${user?.email}`}>All Books</Link>
-                </li>
-              )}
+
+              <li onClick={() => setDropdown(false)}>
+                <Link to={`/allbooks/all`}>All Books</Link>
+              </li>
+
               {user && (
                 <li onClick={() => setDropdown(false)}>
                   <Link to={"/addbook"}>Add Book</Link>
@@ -69,7 +70,7 @@ const NavBar = () => {
             </ul>
           )}
         </div>
-        <p className="text-3xl font-extrabold hidden md:inline lg:inline text-white ">
+        <p className="text-3xl  font-extrabold hidden md:inline lg:inline text-[#30d787] ">
           LitHub
         </p>
       </div>
@@ -78,11 +79,10 @@ const NavBar = () => {
           <li>
             <NavLink to={"/"}>Home</NavLink>
           </li>
-          {user && (
-            <li>
-              <NavLink to={`/allbooks/all?email=${user?.email}`}>All Books</NavLink>
-            </li>
-          )}
+
+          <li>
+            <NavLink to={`/allbooks/all`}>All Books</NavLink>
+          </li>
 
           {user && (
             <li>

@@ -67,10 +67,10 @@ const Details = () => {
   } = useLoaderData();
   return (
     <div className="hero component-bg min-h-screen">
-      <div className="hero-content  flex-col lg:flex-row">
+      <div className="hero-content  md:flex-col flex-col lg:flex-row">
         <img
           src={image}
-          className="h-[280px] w-[200px] rounded-lg shadow-2xl"
+          className="lg:h-[280px] md:h-[150px] h-[150px] lg:w-[300px] w-[250px] rounded-lg shadow-2xl"
         />
 
         <div className="lg:w-3/4 md:w-full w-full flex flex-col items-center lg:items-start md:items-center ">

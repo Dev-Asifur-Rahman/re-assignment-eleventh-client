@@ -79,13 +79,13 @@ body {
 }
 
 #navActive li a{
-  color: white;
+  color: black;
   font-weight: 600;
   font-size: 18px;
 }
 
 #navActive li a.active {
-  color: black;
+  color: #30d787;
 }
 
 .component-bg{

@@ -40,7 +40,7 @@ const CategoryMarquee = () => {
   ];
 
   return (
-    <Marquee pauseOnHover={true}>
+    <Marquee className="my-8" pauseOnHover={true}>
       <section className="flex gap-20 mr-20 items-center py-5">
         {Category.map((card) => (
           <CategoryMarqueeCard

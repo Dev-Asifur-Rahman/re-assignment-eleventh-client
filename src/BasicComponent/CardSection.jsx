@@ -7,23 +7,26 @@ const CardSection = ({ allBook, setdataView, availableBook }) => {
     setBook(allBook);
   }, [allBook]);
   return (
-    <section className="w-full component-bg py-3">
-      <p className="text-2xl font-bold md:text-3xl lg:text-4xl text-center my-3">
-        Books
-      </p>
-      <p
-        onClick={availableBook}
-        className="text-xl font-bold text-blue-500 hover:underline text-center my-3 hover:cursor-pointer"
-      >
-        See available Books
-      </p>
-      <p
-        onClick={() => setdataView("table")}
-        className="text-xl cursor-pointer font-semibold hover:underline text-center my-2"
-      >
-        Table View
-      </p>
-      <section className="w-full grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-items-center gap-y-4">
+    <section className="w-full component-bg pb-3">
+      <section className="w-full py-4 bg-white flex flex-col gap-3">
+        <p className="text-2xl font-bold md:text-3xl lg:text-4xl text-center ">
+          Books
+        </p>
+        <p
+          onClick={availableBook}
+          className="text-xl font-bold text-blue-500 hover:underline text-center  hover:cursor-pointer"
+        >
+          See available Books
+        </p>
+        <p
+          onClick={() => setdataView("table")}
+          className="text-xl cursor-pointer font-semibold hover:underline text-center "
+        >
+          Table View
+        </p>
+      </section>
+
+      <section className="w-full grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-items-center py-8 gap-y-4">
         {Books.map((book) => (
           <DataCard key={book._id} book={book}></DataCard>
         ))}

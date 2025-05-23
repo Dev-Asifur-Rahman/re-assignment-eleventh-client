@@ -7,6 +7,7 @@ import { Context } from "../Context/context";
 const UpdateBook = () => {
   const {user} = useContext(Context)
   const navigate = useNavigate();
+  const navigateLogin = useNavigate()
   const {
     _id,
     author_name,
@@ -48,7 +49,10 @@ const UpdateBook = () => {
         .then((result) => {
           if (result.data.acknowledged) {
             toast.success("Data Updated Successfully");
-            navigate(`/allbooks/all?email=${user?.email}`);
+            navigate(`/allbooks/all`);
+          }
+          else{
+            return toast.error("Please LogIn First")
           }
         })
         .catch((error) => toast.error("Something Wrong!Try Again"));

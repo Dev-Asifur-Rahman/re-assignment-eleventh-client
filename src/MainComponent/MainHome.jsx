@@ -1,30 +1,48 @@
-import React, { useContext } from "react";
-import { Outlet } from "react-router";
-import { ApiInstance } from "../Context/apiInstance";
-import { Context } from "../Context/context";
+import React, { useEffect } from "react";
+import { Outlet, useNavigate } from "react-router";
 import NavBar from "../BasicComponent/NavBar";
 import Footer from "../BasicComponent/Footer";
-
+import { ApiInstance } from "../Context/apiInstance";
+import { signOut } from "firebase/auth";
+import { Auth } from "../Firebase/firebase";
+import { lottieError } from "../lottie/lottie";
 
 const MainHome = () => {
-  const { user } = useContext(Context);
-  ApiInstance.interceptors.request.use(
-    (config) => {
-      return config;
-    },
-    function (error) {
-      return Promise.reject(error);
-    }
-  );
+  const logOut = () => {
+    return signOut(Auth);
+  };
 
-  ApiInstance.interceptors.response.use(
-    (response) => {
-      return response;
-    },
-    (error) => {
-      return Promise.reject(error);
-    }
-  );
+  const navigate = useNavigate();
+  useEffect(() => {
+    const reqInterceptor = ApiInstance.interceptors.request.use(
+      (config) => {
+        return config;
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+
+    const resInterceptor = ApiInstance.interceptors.response.use(
+      (response) => {
+        return response;
+      },
+      async (error) => {
+        const status = error.response.status;
+        if (status === 401 || status === 403) {
+          await logOut().then((res) => {
+            navigate("/login");
+            lottieError("You have been logged out");
+          });
+        }
+        return Promise.reject(error);
+      }
+    );
+    return () => {
+      ApiInstance.interceptors.request.eject(reqInterceptor);
+      ApiInstance.interceptors.response.eject(resInterceptor);
+    };
+  }, []);
 
   return (
     <div>

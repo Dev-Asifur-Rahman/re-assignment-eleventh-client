@@ -32,17 +32,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/allbooks/:category",
-        loader: async ({ params,request }) => {
-          const url = new URL(request.url);
-          const email = url.searchParams.get("email");
-          const result = await ApiInstance.get(`/books/${params.category}?email=${email}`);
+        loader: async ({ params }) => {
+          const result = await ApiInstance.get(`/books/${params.category}`);
           return result;
         },
-        element: (
-          <PrivateRoute>
-            <AllBooks></AllBooks>
-          </PrivateRoute>
-        ),
+        element: <AllBooks></AllBooks>,
       },
       {
         path: "/addbook",
@@ -62,7 +56,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/bookDetails/:id",
-        loader: ({ params,request }) => {
+        loader: ({ params, request }) => {
           const url = new URL(request.url);
           const email = url.searchParams.get("email");
           return ApiInstance.get(`/book/${params.id}?email=${email}`)
@@ -82,7 +76,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/updateBook/:id",
-        loader: ({ params,request }) => {
+        loader: ({ params, request }) => {
           const url = new URL(request.url);
           const email = url.searchParams.get("email");
           return ApiInstance.get(`/book/${params.id}?email=${email}`)

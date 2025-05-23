@@ -5,7 +5,7 @@ const TableCard = ({ book, index }) => {
   return (
     <tr>
       <th>{index}</th>
-      <td>{name}</td>
+      <td className="">{name}</td>
       <td>{author_name}</td>
       <td>{category}</td>
       <td>{quantity}</td>
