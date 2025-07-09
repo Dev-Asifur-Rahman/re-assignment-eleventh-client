@@ -18,8 +18,7 @@ const NavBar = () => {
     });
   }
   return (
-    <div className="w-full flex items-center px-2 h-16">
-      
+    <div className="w-full flex items-center lg:px-6 md:px-6 px-3 h-16">
       <div className="navbar-start">
         {/* dropdown */}
         <div
@@ -74,7 +73,9 @@ const NavBar = () => {
         <p className="text-3xl  font-extrabold hidden md:inline lg:inline text-[#30d787] ">
           LitHub
         </p>
-        
+        <div className="md:hidden lg:hidden">
+          <ThemeController></ThemeController>
+        </div>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul id="navActive" className="flex items-center gap-2">
@@ -99,7 +100,10 @@ const NavBar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <ThemeController></ThemeController>
+        <div className="hidden md:inline lg:inline">
+          <ThemeController></ThemeController>
+        </div>
+
         {user && (
           <img
             id="image_tooltip"

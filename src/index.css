@@ -8,7 +8,7 @@ body {
 
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: silk --default, dim --prefersdark
+  themes: silk --default, dark --prefersdark
 }
 
 .loader {
@@ -81,9 +81,8 @@ body {
 }
 
 #navActive li a{
-  color: black;
-  font-weight: 600;
-  font-size: 18px;
+  font-weight: 400;
+  font-size: 16px;
 }
 
 #navActive li a.active {

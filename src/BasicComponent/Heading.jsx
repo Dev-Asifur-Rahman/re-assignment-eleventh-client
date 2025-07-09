@@ -4,7 +4,7 @@ const Heading = ({head,body}) => {
       <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
         {head}
       </h1>
-      <p className="text-base md:text-lg lg:text-xl text-gray-600">
+      <p className="text-base md:text-lg lg:text-xl">
         {body}
       </p>
     </div>

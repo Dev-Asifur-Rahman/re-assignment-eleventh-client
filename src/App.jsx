@@ -12,6 +12,7 @@ function App() {
   const [Loading, setLoading] = useState(true);
   const [user, setUser] = useState(null);
   const [borrowedBook, setBook] = useState([]);
+  const [theme, setTheme] = useState("silk");
 
   // onAuthStateChange
   useEffect(() => {
@@ -46,14 +47,25 @@ function App() {
     return () => unsubscribe();
   }, []);
 
-  
-  
+  useEffect(() => {
+    setLoading(true);
+    const savedTheme = localStorage.getItem("theme") || "silk";
+    document.documentElement.setAttribute("data-theme", savedTheme);
+    setTheme(savedTheme);
+    if (!localStorage.getItem("theme")) {
+      localStorage.setItem("theme", savedTheme);
+    }
+    setLoading(false);
+  }, []);
+
   const contextProvider = {
     Auth,
     Loading,
     user,
     setLoading,
     borrowedBook,
+    theme,
+    setTheme,
   };
 
   return (
