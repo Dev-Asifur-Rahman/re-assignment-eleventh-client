@@ -11,13 +11,8 @@ const Home = () => {
   const { Auth } = useContext(Context);
 
   return (
-    <div className="component-bg">
+    <div className="">
       <MarQuee></MarQuee>
-      <Heading
-        head="Explore Our Digital Library"
-        body="Slide through powerful quotes to spark your love for reading and
-        learning"
-      ></Heading>
       <Slider></Slider>
       <Heading
         head="Browse by Category"

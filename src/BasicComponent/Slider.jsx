@@ -1,4 +1,3 @@
-import React from "react";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -49,7 +48,7 @@ const Slider = () => {
       }}
       navigation={true}
       modules={[Autoplay, Pagination, Navigation]}
-      className="mySwiper -2 mb-10 lg:h-[70vh] md:h-[60vh] h-[180px] w-full "
+      className="mySwiper-2 mb-10 lg:h-[70vh] md:h-[60vh] h-[180px] w-full "
     >
       <SwiperSlide>
         <section

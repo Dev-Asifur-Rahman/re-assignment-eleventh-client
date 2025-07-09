@@ -7,7 +7,9 @@ body {
 }
 
 @import "tailwindcss";
-@plugin "daisyui";
+@plugin "daisyui" {
+  themes: silk --default, dim --prefersdark
+}
 
 .loader {
   width: 20px;

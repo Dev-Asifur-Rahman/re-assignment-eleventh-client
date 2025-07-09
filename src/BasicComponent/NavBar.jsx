@@ -5,6 +5,7 @@ import { Link, NavLink, useNavigate } from "react-router";
 import "react-tooltip/dist/react-tooltip.css";
 import { Tooltip } from "react-tooltip";
 import personIcon from "../../public/images/personicon.svg";
+import ThemeController from "./ThemeController";
 
 const NavBar = () => {
   const { user, Auth } = useContext(Context);
@@ -17,7 +18,7 @@ const NavBar = () => {
     });
   }
   return (
-    <div className="w-full flex items-center px-2 h-16 bg-white ">
+    <div className="w-full flex items-center px-2 h-16">
       
       <div className="navbar-start">
         {/* dropdown */}
@@ -73,6 +74,7 @@ const NavBar = () => {
         <p className="text-3xl  font-extrabold hidden md:inline lg:inline text-[#30d787] ">
           LitHub
         </p>
+        
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul id="navActive" className="flex items-center gap-2">
@@ -97,6 +99,7 @@ const NavBar = () => {
         </ul>
       </div>
       <div className="navbar-end">
+        <ThemeController></ThemeController>
         {user && (
           <img
             id="image_tooltip"
