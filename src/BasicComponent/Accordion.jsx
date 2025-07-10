@@ -42,8 +42,8 @@ const Accordion = () => {
             index % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"
           } items-center px-5`}
         >
-          <div className="w-full md:w-1/2 lg:px-16 lg:w-1/2 ">
-            <div className="collapse collapse-arrow bg-base-100 border-base-300 rounded-xl shadow-md p-4">
+          <div className="w-full  md:w-1/2 lg:px-16 lg:w-1/2 ">
+            <div className="collapse bg-white text-black collapse-arrow  border-base-300 rounded-xl shadow-md p-4">
               <input type="radio" name="my-accordion-2" defaultChecked />
               <div className="collapse-title font-semibold">
                 {lottie?.question}

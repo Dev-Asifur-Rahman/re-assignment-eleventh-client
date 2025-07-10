@@ -48,28 +48,28 @@ const Slider = () => {
       }}
       navigation={true}
       modules={[Autoplay, Pagination, Navigation]}
-      className="mySwiper-2 mb-10 lg:h-[70vh] md:h-[60vh] h-[180px] w-full "
+      className="mySwiper-2 mb-10 lg:h-[90vh] md:h-[60vh] h-[180px] w-full "
     >
       <SwiperSlide>
         <section
-          className={`bg-black h-full w-full flex flex-col lg:flex-row md:flex-row items-center`}
+          className={`bg-[#1d232a] h-full w-full flex flex-col lg:flex-row md:flex-row items-center`}
         >
           <section className=" h-1/2 lg:h-full md:h-full  md:w-1/2 lg:w-1/2 w-full flex justify-center items-center">
             <p className=" text-white w-fit text-center md:text-start lg:text-start font-bold text-2xl md:text-4xl lg:text-6xl lg:leading-[15vh] md:leading-[10vh] lg:pl-16 md:pl-14 pl-0">
               Immerse Yourself in the Magic of Words
             </p>
           </section>
-          <section className=" h-1/2 lg:h-full md:h-full  md:w-1/2 lg:w-1/2 w-full flex justify-center items-center">
+          <section className=" h-1/2 lg:h-full md:h-full md:w-1/2 lg:w-1/2 w-full flex justify-center items-center">
             <Lottie
               animationData={sliderOne}
-              className="lg:h-[40vh] md:h-[35vh] h-[100px]  lg:w-[40vh]  md:w-[35vh] w-[100px] "
+              className="lg:h-[40vh] md:h-[35vh] rounded-full h-[100px]  lg:w-[40vh]  md:w-[35vh] w-[100px] "
             ></Lottie>
           </section>
         </section>
       </SwiperSlide>
       <SwiperSlide>
         <section
-          className={`bg-white h-full w-full flex flex-col lg:flex-row md:flex-row items-center`}
+          className={`bg-[#f7f5f3] text-black h-full w-full flex flex-col lg:flex-row md:flex-row items-center`}
         >
           <section className=" h-1/2 lg:h-full md:h-full  md:w-1/2 lg:w-1/2 w-full flex justify-center items-center">
             <p className=" w-fit text-center md:text-start lg:text-start font-bold text-2xl md:text-4xl lg:text-6xl lg:leading-[15vh] md:leading-[10vh] lg:pl-16 md:pl-14 pl-0">
@@ -86,7 +86,7 @@ const Slider = () => {
       </SwiperSlide>
       <SwiperSlide>
         <section
-          className={`bg-black h-full w-full flex flex-col lg:flex-row md:flex-row items-center`}
+          className={`bg-[#1d232a] h-full w-full flex flex-col lg:flex-row md:flex-row items-center`}
         >
           <section className=" text-white h-1/2 lg:h-full md:h-full  md:w-1/2 lg:w-1/2 w-full flex justify-center items-center">
             <p className=" w-fit text-center md:text-start lg:text-start font-bold text-2xl md:text-4xl lg:text-6xl lg:leading-[15vh] md:leading-[10vh] lg:pl-16 md:pl-14 pl-0">
@@ -103,7 +103,7 @@ const Slider = () => {
       </SwiperSlide>
       <SwiperSlide>
         <section
-          className={`bg-white h-full w-full flex flex-col lg:flex-row md:flex-row items-center`}
+          className={`bg-[#f7f5f3] text-black h-full w-full flex flex-col lg:flex-row md:flex-row items-center`}
         >
           <section className=" h-1/2 lg:h-full md:h-full  md:w-1/2 lg:w-1/2 w-full flex justify-center items-center">
             <p className=" w-fit text-center md:text-start lg:text-start font-bold text-2xl md:text-4xl lg:text-6xl lg:leading-[15vh] md:leading-[10vh] lg:pl-16 md:pl-14 pl-0">

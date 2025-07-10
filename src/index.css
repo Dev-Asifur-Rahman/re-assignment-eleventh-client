@@ -99,10 +99,9 @@ body {
 .marqueeCategoryCard {
   width: 280px;
   height: 180px;
-  background-color: #9dffb6;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  border-radius: 8px;
+  border-radius: 14px;
   margin: 10px;
 }

@@ -7,14 +7,14 @@ const CategoryMarqueeCard = ({ image, name }) => {
   return (
     <div
       style={{ backgroundImage: `url(${image})` }}
-      className=" flex justify-center items-end shrink-0 hover:scale-105 marqueeCategoryCard transition-all duration-300 ease-in-out"
+      className=" flex border-2 shadow-xl justify-center items-end shrink-0 hover:scale-105 marqueeCategoryCard transition-all duration-300 ease-in-out"
     >
-      <div className="card-body">
-        <h2 className="card-title  w-[150px] justify-center bg-white/10 border border-white  text-[#2b2b2b] font-bold text-lg rounded-[8px] py-[1px]">
+      <div className=" p-5 flex flex-col justify-between w-full h-full">
+        <h2 className=" w-fit py-1 px-3 bg-white/10 border font-bold text-sm rounded-[8px]">
           {name}
         </h2>
         <Link to={`/allbooks/${name}`}>
-          <button className="btn-hover color-5 ">See More </button>
+          <button className="btn btn-sm btn-outline hover:bg-[#f7f5f3] hover:text-black dark:hover:bg-white dark:hover:text-black">See More</button>
         </Link>
       </div>
     </div>

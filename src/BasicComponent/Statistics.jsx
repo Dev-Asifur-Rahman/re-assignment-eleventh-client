@@ -54,7 +54,7 @@ const Statistics = () => {
   ];
 
   return (
-    <section className="py-3 md:py-5 lg:py-8 lg:h-[500px] md:h-[300px] mx-auto h-[250px] w-full md:w-2/3 lg:w-4/5">
+    <section className="py-3 md:py-5 lg:py-8 lg:h-[400px] md:h-[300px] mx-auto h-[250px] w-full md:w-2/3 lg:w-3/5">
       <ResponsiveContainer width="100%" height="100%">
         <BarChart data={data}>
           <CartesianGrid strokeDasharray="3 3" />

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { Context } from "../Context/context";
 import MarQuee from "../BasicComponent/Marquee";
 import Slider from "../BasicComponent/Slider";
