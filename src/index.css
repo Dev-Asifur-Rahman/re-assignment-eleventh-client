@@ -7,9 +7,12 @@ body {
 }
 
 @import "tailwindcss";
+
 @plugin "daisyui" {
-  themes: silk --default, dark --prefersdark
+  themes: silk --default, dark --prefersdark;
 }
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 .loader {
   width: 20px;
@@ -80,7 +83,7 @@ body {
   box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
 }
 
-#navActive li a{
+#navActive li a {
   font-weight: 400;
   font-size: 16px;
 }
@@ -89,7 +92,7 @@ body {
   color: #30d787;
 }
 
-.component-bg{
+.component-bg {
   background-color: #f0f8ea;
 }
 
