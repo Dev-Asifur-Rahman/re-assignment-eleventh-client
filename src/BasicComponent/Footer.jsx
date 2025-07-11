@@ -97,7 +97,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="text-center w-full  py-2 mt-12">
+        <div className="text-center border-t-2 dark:border-t-white border-t-amber-100 w-full  py-2 mt-12">
           <p>© Copyright 2025 . All rights reserved.</p>
         </div>
       </div>
