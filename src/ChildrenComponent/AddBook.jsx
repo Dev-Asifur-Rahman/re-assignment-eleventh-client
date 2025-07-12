@@ -41,7 +41,7 @@ const AddBook = () => {
     }
   };
   return (
-    <div className="component-bg w-full flex justify-center items-center">
+    <div className=" w-full flex justify-center items-center">
       <form
         className="w-fit py-12 lg:py-18 md:py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-x-2 md:gap-x-4 gap-y-2 md:gap-y-4 justify-items-center "
         onSubmit={addBook}
@@ -101,7 +101,7 @@ const AddBook = () => {
         <textarea
           required
           name="short_description"
-          className="textarea  w-[90%] md:col-span-2 lg:col-span-2"
+          className="textarea  w-[95%] md:col-span-2 lg:col-span-2"
           placeholder="Short Description"
         ></textarea>
         <button className="btn-hover color-5 md:col-span-2 lg:col-span-2">

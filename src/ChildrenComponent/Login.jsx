@@ -11,7 +11,7 @@ import { lottieError, lottieSuccess } from "../lottie/lottie";
 
 const Login = () => {
   const [Eye, setEye] = useState(false);
-  const { Auth,setLoading } = useContext(Context);
+  const { Auth, setLoading } = useContext(Context);
   const home = useNavigate();
   const GoogleProvider = new GoogleAuthProvider();
 
@@ -59,7 +59,7 @@ const Login = () => {
     const target = e.target;
     const email = target.email.value;
     const password = target.password.value;
-    setLoading(true)
+    setLoading(true);
     signInWithEmailAndPassword(Auth, email, password)
       .then((res) => {
         lottieSuccess("LogIn Successful");
@@ -71,7 +71,7 @@ const Login = () => {
   };
 
   function googleLogin() {
-    setLoading(true)
+    setLoading(true);
     signInWithPopup(Auth, GoogleProvider)
       .then((res) => {
         lottieSuccess("LogIn Seccessful");
@@ -141,8 +141,13 @@ const Login = () => {
                 </div>
               </div>
             </div>
-            <Link>Forgot password?</Link>
-            <button id="login-button">LogIn</button>
+            <p className="w-full text-end my-2">
+              <Link>Forgot password?</Link>
+            </p>
+
+            <button id="login-button" className="border-2">
+              LogIn
+            </button>
           </form>
           <div className="alternate-logins">
             Or Sign Up Using
