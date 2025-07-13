@@ -8,6 +8,11 @@ body {
 
 @import "tailwindcss";
 
+@theme {
+  --breakpoint-xs: 321px;
+}
+
+
 @plugin "daisyui" {
   themes: silk --default, dark --prefersdark;
 }

@@ -9,9 +9,9 @@ import toast from "react-hot-toast";
 const Register = () => {
   const { Auth } = useContext(Context);
   const [Eye, setEye] = useState(false);
-  const home = useNavigate()
+  const home = useNavigate();
 
-  // toggle password icon 
+  // toggle password icon
   const eye = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -58,29 +58,30 @@ const Register = () => {
     const image = target.image.value;
     const password = target.password.value;
     if (password.length < 6) {
-      toast.error("Enter at least 6 digit")
+      toast.error("Enter at least 6 digit");
       return;
     }
     if (!/[A-Z]/.test(password)) {
-      toast.error("must contain uppercase letter.")
+      toast.error("must contain uppercase letter.");
       return;
     }
 
     if (!/[a-z]/.test(password)) {
-      toast.error("must contain lowercase letter.")
+      toast.error("must contain lowercase letter.");
       return;
     } else {
       createUserWithEmailAndPassword(Auth, email, password)
         .then((res) => {
-          updateProfile(Auth.currentUser,{
-            displayName:name,photoURL:image
-          })
-          lottieSuccess('Register Successfull')
-          home('/')
+          updateProfile(Auth.currentUser, {
+            displayName: name,
+            photoURL: image,
+          });
+          lottieSuccess("Register Successfull");
+          home("/");
         })
         .catch((error) => {
-          lottieError('Something Went Wrong !')
-          target.reset()
+          lottieError("Something Went Wrong !");
+          target.reset();
         });
     }
   }
@@ -171,7 +172,9 @@ const Register = () => {
                 </div>
               </div>
             </div>
-            <Link>Forgot password?</Link>
+            <p className="w-full text-end my-2">
+              <Link>Forgot password?</Link>
+            </p>
             <button id="register-button">Register</button>
           </form>
 
