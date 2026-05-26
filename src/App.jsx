@@ -12,7 +12,7 @@ function App() {
   const [Loading, setLoading] = useState(true);
   const [user, setUser] = useState(null);
   const [borrowedBook, setBook] = useState([]);
-  const [theme, setTheme] = useState("silk");
+  const [theme, setTheme] = useState("light");
 
   // onAuthStateChange
   useEffect(() => {

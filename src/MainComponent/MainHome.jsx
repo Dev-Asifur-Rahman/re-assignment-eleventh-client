@@ -6,6 +6,7 @@ import { ApiInstance } from "../Context/apiInstance";
 import { signOut } from "firebase/auth";
 import { Auth } from "../Firebase/firebase";
 import { lottieError } from "../lottie/lottie";
+import MarQuee from "../BasicComponent/Marquee";
 
 const MainHome = () => {
   const logOut = () => {
@@ -20,7 +21,7 @@ const MainHome = () => {
       },
       (error) => {
         return Promise.reject(error);
-      }
+      },
     );
 
     const resInterceptor = ApiInstance.interceptors.response.use(
@@ -36,7 +37,7 @@ const MainHome = () => {
           });
         }
         return Promise.reject(error);
-      }
+      },
     );
     return () => {
       ApiInstance.interceptors.request.eject(reqInterceptor);
@@ -46,6 +47,7 @@ const MainHome = () => {
 
   return (
     <div>
+      <MarQuee></MarQuee>
       <NavBar></NavBar>
       <Outlet></Outlet>
       <Footer></Footer>

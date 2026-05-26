@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { Context } from "../Context/context";
-import MarQuee from "../BasicComponent/Marquee";
 import Slider from "../BasicComponent/Slider";
 import CategoryMarquee from "../BasicComponent/CategoryMarquee";
 import Heading from "../BasicComponent/Heading";
@@ -12,7 +11,7 @@ const Home = () => {
 
   return (
     <div className="">
-      <MarQuee></MarQuee>
+      
       <Slider></Slider>
       <Heading
         head="Browse by Category"

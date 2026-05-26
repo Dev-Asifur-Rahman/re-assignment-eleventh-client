@@ -14,7 +14,7 @@ body {
 
 
 @plugin "daisyui" {
-  themes: silk --default, dark --prefersdark;
+  themes: dark --prefersdark;
 }
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
