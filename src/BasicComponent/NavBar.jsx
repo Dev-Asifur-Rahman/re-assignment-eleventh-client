@@ -31,13 +31,13 @@ const NavBar = () => {
             tabIndex={0}
             onClick={() => setDropdown(!Dropdown)}
           >
-            <div className="btn btn-ghost btn-circle">
+            <div className="btn btn-ghost btn-circle  border border-transparent hover:border-library">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke="currentColor"
+                stroke="#30d787"
               >
                 {" "}
                 <path
