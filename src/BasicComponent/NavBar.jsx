@@ -51,7 +51,7 @@ const NavBar = () => {
             {Dropdown && (
               <ul
                 tabIndex={0}
-                className="menu menu-sm bg-base-100 dropdown-content rounded-box z-1 mt-3 w-40 p-2 shadow"
+                className="menu menu-sm rounded-md dropdown-content rounded-box z-1 mt-1 w-40 p-2 shadow border border-library text-library"
               >
                 <li onClick={() => setDropdown(false)}>
                   <Link>Home</Link>

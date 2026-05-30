@@ -20,6 +20,7 @@ html {
 @theme {
   --breakpoint-xs: 321px;
   --color-library: #30d787;
+  --color-offwhite : #f7f5f3;
 }
 
 @layer utilities {
