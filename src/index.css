@@ -4,14 +4,29 @@ body {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
+   -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scrollbar-width: none;
 }
 
 @import "tailwindcss";
 
 @theme {
   --breakpoint-xs: 321px;
+  --color-library: #30d787;
 }
 
+@layer utilities {
+  .text-library {
+    color: var(--color-library);
+  }
+}
 
 @plugin "daisyui" {
   themes: dark --prefersdark;
