@@ -19,7 +19,7 @@ const NavBar = () => {
     });
   }
   return (
-    <div className="navbar shadow-sm">
+    <div className="navbar">
       <div className="navbar-start">
         <div
           className="dropdown"

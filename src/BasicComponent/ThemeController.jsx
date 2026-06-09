@@ -3,7 +3,6 @@ import { Context } from "../Context/context";
 
 const ThemeController = () => {
   const { theme, setTheme } = useContext(Context);
-  console.log(theme);
   const handleTheme = (e) => {
     if (e.target.checked) {
       localStorage.setItem("theme", "dark");
