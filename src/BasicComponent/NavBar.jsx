@@ -18,7 +18,7 @@ const NavBar = () => {
   }, [location]);
 
   function signout() {
-    signOut(Auth).then((res) => {
+    signOut(Auth).then(() => {
       navigate("/");
     });
   }
