@@ -53,7 +53,7 @@ const Slider = () => {
       {sliderData?.map((slider, index) => {
         return (
           <SwiperSlide className="" key={index}>
-            <section className="flex flex-col-reverse md:flex-row lg:h-[90vh] md:h-[400px] w-full">
+            <section className="flex flex-col-reverse md:flex-row lg:h-[90vh] md:h-[400px] w-[95%] mx-auto border-2 md:border-4 rounded-2xl border-library">
               <div className="md:w-1/2 md:flex justify-center items-center">
                 <p className="w-full md:w-9/10 lg:w-4/5 uppercase text-md md:text-4xl/14 lg:text-5xl/18 text-center md:text-start p-4 md:p-0 font-extrabold md:font-extrabold">
                  {slider.text}
