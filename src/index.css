@@ -21,6 +21,14 @@ html {
   --breakpoint-xs: 321px;
   --color-library: #30d787;
   --color-offwhite: #f7f5f3;
+  --text-shadow-library:
+    text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.45), 1px -1px 1px #239f63,
+    -1px 1px 1px #168a52, 1px 1px 1px #168a52,
+    0 2px 2px rgba(22, 100, 60, 0.35), 0 4px 5px rgba(0, 60, 30, 0.2);
+  --text-shadow-dark-library:
+    -1px -1px 1px rgba(190, 255, 220, 0.65), 1px -1px 1px #39e99a,
+    -1px 1px 1px #15985a, 1px 1px 1px #15985a,
+    0 2px 3px rgba(48, 215, 135, 0.4), 0 4px 6px rgba(0, 0, 0, 0.4);sdzx
 }
 
 @layer utilities {

@@ -88,7 +88,7 @@ const NavBar = () => {
         <div className="navbar-center">
           <p
             onClick={() => navigate("/")}
-            className="text-3xl  font-extrabold text-library cursor-pointer heading-shadow"
+            className="md:text-4xl text-3xl lg:tracking-wider  font-extrabold text-library cursor-pointer heading-shadow"
           >
             LitHub
           </p>
