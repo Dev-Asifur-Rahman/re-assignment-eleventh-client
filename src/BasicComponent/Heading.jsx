@@ -1,10 +1,10 @@
 const Heading = ({head,body}) => {
   return (
-    <div className="text-center w-full px-2 py-4 md:py-4 lg:py-6">
+    <div className="text-center w-full px-2 py-4 md:py-4 lg:py-6 text-library heading-shadow">
       <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
         {head}
       </h1>
-      <p className="text-base md:text-lg lg:text-xl">
+      <p className="text-base md:text-lg">
         {body}
       </p>
     </div>
