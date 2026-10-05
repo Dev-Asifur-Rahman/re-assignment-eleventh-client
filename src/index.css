@@ -4,7 +4,7 @@ body {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
-   -ms-overflow-style: none;
+  -ms-overflow-style: none;
 }
 
 ::-webkit-scrollbar {
@@ -20,7 +20,7 @@ html {
 @theme {
   --breakpoint-xs: 321px;
   --color-library: #30d787;
-  --color-offwhite : #f7f5f3;
+  --color-offwhite: #f7f5f3;
 }
 
 @layer utilities {
@@ -125,4 +125,10 @@ html {
   background-position: center;
   border-radius: 14px;
   margin: 10px;
+}
+
+.heading-shadow {
+  text-shadow:
+    0 2px 1px rgba(20, 150, 85, 0.35),
+    0 4px 8px rgba(48, 215, 135, 0.2);
 }
