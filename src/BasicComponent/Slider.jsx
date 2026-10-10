@@ -10,30 +10,34 @@ import sliderOne from "../../public/Lottie/sliderone.json";
 const Slider = () => {
   // const sliderData = [
   //   {
-  //     text: "",
+  //     text: "Immerse Yourself in the Magic of Words",
   //     lottie: sliderOne,
   //     color: "#000000",
   //   },
   //   {
-  //     text: "Immerse Yourself in the Magic of Words",
+  //     text: " Fuel Your Mind, Shape Your Future",
   //     lottie: sliderTwo,
   //     color: "#FFFFFF",
   //   },
   //   {
-  //     text: "Immerse Yourself in the Magic of Words",
+  //     text: "Explore Worlds Beyond Imagination",
   //     lottie: sliderThree,
   //     color: "#000000",
   //   },
   //   {
-  //     text: "Immerse Yourself in the Magic of Words",
+  //     text: "Unlock Your Creativity, Voyage Through Time",
   //     lottie: sliderFour,
   //     color: "#FFFFFF",
   //   },
   // ];
 
   return (
-    <section className="flex flex-col-reverse md:flex-row lg:h-[90vh] md:h-[400px] w-full border">
-      <div className="md:w-1/2">Text</div>
+    <section className="flex flex-col-reverse md:flex-row lg:h-[90vh] md:h-[400px] w-full">
+      <div className="md:w-1/2 md:flex justify-center items-center">
+        <p className="w-full md:w-9/10 lg:w-4/5 uppercase text-md md:text-4xl/14 lg:text-5xl/18 text-center md:text-start p-4 md:p-0 font-extrabold md:font-extrabold">
+          Immerse Yourself in the Magic of Words
+        </p>
+      </div>
       <div className="md:w-1/2 flex items-center justify-center">
         <Lottie
           animationData={sliderOne}
