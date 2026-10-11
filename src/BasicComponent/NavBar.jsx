@@ -31,7 +31,7 @@ const NavBar = () => {
             tabIndex={0}
             onClick={() => setDropdown(!Dropdown)}
           >
-            <div className="btn btn-ghost btn-circle  border border-transparent hover:border-library">
+            <div className="btn btn-ghost btn-circle  border-2 border-transparent hover:border-library">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -50,8 +50,9 @@ const NavBar = () => {
             </div>
             {Dropdown && (
               <ul
+              id="navbar-dropdown"
                 tabIndex={0}
-                className="menu menu-sm rounded-md dropdown-content rounded-box z-1 mt-1 w-40 p-2 shadow border border-library text-library"
+                className="menu menu-sm rounded-md dropdown-content rounded-box z-1 mt-1 w-40 p-2 shadow-lg text-library font-semibold"
               >
                 <li onClick={() => setDropdown(false)}>
                   <Link>Home</Link>
