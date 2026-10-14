@@ -1,4 +1,4 @@
-import { createBrowserRouter, useLocation } from "react-router";
+import { createBrowserRouter } from "react-router";
 import MainHome from "./MainComponent/MainHome";
 import Error from "./MainComponent/Error";
 import Home from "./ChildrenComponent/Home";
@@ -64,7 +64,7 @@ export const router = createBrowserRouter([
               const book = response.data;
               return book;
             })
-            .catch((error) => {
+            .catch(() => {
               toast.error("Failed to fatch.Try Again");
             });
         },
@@ -84,7 +84,7 @@ export const router = createBrowserRouter([
               const book = response.data;
               return book;
             })
-            .catch((error) => {
+            .catch(() => {
               toast.error("Failed to fatch.Try Again");
             });
         },

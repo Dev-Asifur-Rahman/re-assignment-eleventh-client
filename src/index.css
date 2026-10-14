@@ -79,7 +79,7 @@ html {
   }
 }
 
-.btn-hover {
+/* .btn-hover {
   width: 100px;
   font-size: 14px;
   font-weight: 600;
@@ -95,21 +95,21 @@ html {
   -o-transition: all 0.4s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
-}
+} */
 
-.btn-hover:hover {
+/* .btn-hover:hover {
   background-position: 100% 0;
   moz-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
-}
+} */
 
-.btn-hover:focus {
+/* .btn-hover:focus {
   outline: none;
-}
+} */
 
-.btn-hover.color-5 {
+/* .btn-hover.color-5 {
   background-image: linear-gradient(
     to right,
     #0ba360,
@@ -118,7 +118,7 @@ html {
     #2bb673
   );
   box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
-}
+} */
 
 #navActive li a {
   font-weight: 400;
@@ -134,8 +134,8 @@ html {
 }
 
 .marqueeCategoryCard {
-  width: 280px;
-  height: 180px;
+  
+  height: 200px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

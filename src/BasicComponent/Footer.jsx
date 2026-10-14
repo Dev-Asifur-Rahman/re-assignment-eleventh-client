@@ -8,7 +8,7 @@ const Footer = () => {
             <h3 className="mb-4 text-lg text-gray-500 dark:text-white uppercase">
               Student Support
             </h3>
-            <h4 className="text-green-600">+91-90129-83208</h4>
+            <h4 className="text-library">+91-90129-83208</h4>
             <p className="text-gray-500 dark:text-white mt-3">
               Sun. - Thur. <b>9:00 AM - 7:00 PM</b>
             </p>
@@ -97,7 +97,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="text-center border-t-2 dark:border-t-white border-t-amber-100 w-full  py-2 mt-12">
+        <div className="text-center border-t-2 border-gray-600 dark:border-t-white text-gray-600 dark:text-inherit font-semibold uppercase font-sans w-full  py-2 mt-12">
           <p>© Copyright 2025 . All rights reserved.</p>
         </div>
       </div>

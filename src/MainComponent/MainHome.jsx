@@ -31,7 +31,7 @@ const MainHome = () => {
       async (error) => {
         const status = error.response.status;
         if (status === 401 || status === 403) {
-          await logOut().then((res) => {
+          await logOut().then(() => {
             navigate("/login");
             lottieError("You have been logged out");
           });

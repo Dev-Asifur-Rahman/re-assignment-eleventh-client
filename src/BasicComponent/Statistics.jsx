@@ -53,20 +53,29 @@ const Statistics = () => {
     "#FF007D",
   ];
 
+  const dataColor = [
+    "#30d787",
+    "#30d787",
+    "#30d787",
+    "#30d787",
+    "#30d787",
+    "#30d787",
+  ];
+
   return (
     <section className="py-3 md:py-5 lg:py-8 lg:h-[400px] md:h-[300px] mx-auto h-[250px] w-full md:w-2/3 lg:w-3/5">
       <ResponsiveContainer width="100%" height="100%">
         <BarChart data={data}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="name" tick={{ fontSize: tickFontSize }} />
-          {YAxisScreen && <YAxis />}
+          {/* {YAxisScreen && <YAxis />} */}
           <Tooltip />
           <Legend />
-          <Bar dataKey="books">
+          <Bar dataKey="books" maxBarSize={80}>
             {data.map((entry, index) => (
               <Cell
                 key={`cell-${index}`}
-                fill={colors[index % colors.length]}
+                fill={dataColor[index % colors.length]}
               />
             ))}
           </Bar>

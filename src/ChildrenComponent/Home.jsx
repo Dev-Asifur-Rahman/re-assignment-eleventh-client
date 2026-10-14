@@ -11,7 +11,6 @@ const Home = () => {
 
   return (
     <div className="">
-      
       <Slider></Slider>
       <Heading
         head="Browse by Category"

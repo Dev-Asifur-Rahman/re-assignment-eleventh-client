@@ -4,39 +4,48 @@ import Marquee from "react-fast-marquee";
 
 const CategoryMarquee = () => {
   const Category = [
-    { id: 1, image: "https://i.ibb.co.com/5W83hCQ3/academyresize.png",
-        name:'Novel',
-        
-     },
+    {
+      id: 1,
+      image: "https://i.ibb.co.com/5W83hCQ3/academyresize.png",
+      name: "Novel",
+      description:
+        "Explore captivating stories filled with emotions, adventures, and unforgettable characters.",
+    },
     {
       id: 2,
       image: "https://i.ibb.co.com/XrgNxZXY/biography-removebg-preview.png",
-      name:'Thriller',
-      
+      name: "Thriller",
+      description:
+        "Discover suspenseful stories filled with mystery, danger, and unexpected twists.",
     },
     {
       id: 3,
       image: "https://i.ibb.co.com/7Nv21DtK/download-removebg-preview.png",
-      name:'History',
-      
+      name: "History",
+      description:
+        "Explore historical events, ancient civilizations, and stories from the past.",
     },
     {
       id: 4,
       image: "https://i.ibb.co.com/QFx49sGZ/fiction-removebg-preview.png",
-      name:'Drama',
-      
+      name: "Drama",
+      description:
+        "Experience emotional stories about relationships, conflicts, and everyday life.",
     },
     {
       id: 5,
       image: "https://i.ibb.co.com/sdkqMMB7/history-removebg-preview.png",
-      name:'Sci-Fi',
+      name: "Sci-Fi",
+      description:
+        "Explore futuristic worlds, advanced technology, space, and scientific discoveries.",
     },
     {
       id: 6,
       image: "https://i.ibb.co.com/xtJGKCZK/reference-removebg-preview.png",
-      name:'Mystery',
-      
-    }
+      name: "Mystery",
+      description:
+        "Uncover hidden secrets, solve intriguing puzzles, and follow unexpected clues.",
+    },
   ];
 
   return (
@@ -47,6 +56,7 @@ const CategoryMarquee = () => {
             key={card.id}
             image={card.image}
             name={card.name}
+            description={card.description}
           ></CategoryMarqueeCard>
         ))}
       </section>{" "}

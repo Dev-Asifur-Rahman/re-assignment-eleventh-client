@@ -52,7 +52,7 @@ const NavBar = () => {
               <ul
               id="navbar-dropdown"
                 tabIndex={0}
-                className="menu menu-sm rounded-md dropdown-content rounded-box z-1 mt-1 w-40 p-2 shadow-lg text-library font-semibold"
+                className="menu menu-sm rounded-md dropdown-content rounded-box relative bg-white dark:bg-[#1D232A] z-1 mt-1 w-40 p-2 shadow-lg text-library font-semibold"
               >
                 <li onClick={() => setDropdown(false)}>
                   <Link>Home</Link>

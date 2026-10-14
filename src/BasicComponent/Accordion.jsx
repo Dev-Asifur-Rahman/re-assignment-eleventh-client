@@ -36,14 +36,14 @@ const Accordion = () => {
       {lottieObject.map((lottie, index) => (
         <div
           key={index}
-          className={`flex flex-col md:flex-row ${
+          className={`flex flex-col md:flex-row  ${
             index % 2 === 0 ? "lg:flex-row-reverse" : "lg:flex-row"
           } ${
             index % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"
           } items-center px-5`}
         >
           <div className="w-full  md:w-1/2 lg:px-16 lg:w-1/2 ">
-            <div className="collapse bg-white text-black collapse-arrow  border-base-300 rounded-xl shadow-md p-4">
+            <div className="collapse bg-white border-2 border-library dark:bg-inherit text-library collapse-arrow  rounded-xl shadow-md p-4">
               <input type="radio" name="my-accordion-2" defaultChecked />
               <div className="collapse-title font-semibold">
                 {lottie?.question}
