@@ -13,7 +13,7 @@ const DataCard = ({ book }) => {
     inactiveFillColor: "#fbf1a9",
   };
   return (
-    <div className="card  hover:scale-[1.05] transition-transform duration-500 bg-base-100 w-[240px]  shadow-lg border-2">
+    <div className="card border-library  hover:scale-[1.05] transition-transform duration-500 bg-base-100 w-[240px]  shadow-lg border-2 rounded-lg">
       <figure className="px-6 pt-4">
         <img
           src={image}
