@@ -63,24 +63,37 @@ const Statistics = () => {
   ];
 
   return (
-    <section className="py-3 md:py-5 lg:py-8 lg:h-[400px] md:h-[300px] mx-auto h-[250px] w-full md:w-2/3 lg:w-3/5">
-      <ResponsiveContainer width="100%" height="100%">
-        <BarChart data={data}>
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" tick={{ fontSize: tickFontSize }} />
-          {/* {YAxisScreen && <YAxis />} */}
-          <Tooltip />
-          <Legend />
-          <Bar dataKey="books" maxBarSize={80}>
-            {data.map((entry, index) => (
-              <Cell
-                key={`cell-${index}`}
-                fill={dataColor[index % colors.length]}
-              />
-            ))}
-          </Bar>
-        </BarChart>
-      </ResponsiveContainer>
+    <section className="flex flex-col lg:flex-row lg:items-center py-3 md:py-5 lg:py-8">
+      <div className="lg:h-[400px] md:h-[300px] mx-auto h-[250px] w-full md:w-2/3 lg:w-3/5 md:p-4">
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={data}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" className="text-yellow-400" tick={{ fontSize: tickFontSize }} />
+            {/* {YAxisScreen && <YAxis />} */}
+            <Tooltip />
+            {/* <Legend /> */}
+            <Bar dataKey="books" maxBarSize={80}>
+              {data.map((entry, index) => (
+                <Cell
+                  key={`cell-${index}`}
+                  fill={dataColor[index % colors.length]}
+                />
+              ))}
+            </Bar>
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+
+      <div className=" w-full lg:w-2/5 p-2">
+        <p className="md:w-3/4 md:leading-7 mx-auto p-4 lg:p-6 text-center rounded-md lg:rounded-xl bg-library/15 h-full flex items-center md:font-semibold capitalize">
+          Discover the story behind our growing library through insightful
+          statistics and reading trends. Explore the total number of books,
+          available collections, and popular categories. Track borrowing
+          activity and see how our collection continues to grow. Every number
+          reflects our commitment to making knowledge accessible to everyone.
+          Dive into the stats and explore a world of books.
+        </p>
+      </div>
     </section>
   );
 };
