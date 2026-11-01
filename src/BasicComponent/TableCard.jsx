@@ -1,4 +1,4 @@
-import React from "react";
+
 
 const TableCard = ({ book, index }) => {
   const { name, author_name, category,quantity, rating } = book;

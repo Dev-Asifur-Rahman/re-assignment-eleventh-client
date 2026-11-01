@@ -4,10 +4,14 @@ const CategoryMarqueeCard = ({ image, name, description }) => {
   return (
     <div className="card card-border shadow-lg w-96 marqueeCategoryCard flex flex-row items-center dark:border dark:border-library">
       <div className="w-3/5 flex flex-col justify-evenly h-full pl-5">
-        <h2 className="card-title uppercase font-bold text-library">{name}</h2>
-        <p className="line-clamp-3 font-sans">
-          {description}
-        </p>
+        <div className="flex justify-between items-center w-full">
+          <h2 className="card-title uppercase font-bold text-library">
+            {name}
+          </h2>{" "}
+          <p className="text-[10px] uppercase tracking-widest text-library bg-library/25 py-0.5 px-1.5 rounded-sm">Books</p>
+        </div>
+
+        <p className="line-clamp-3 font-sans">{description}</p>
 
         <button className="btn btn-sm text-library border-0 bg-library/20 dark:bg-library/5 outline outline-library outline-offset-0 btn-wide w-fit rounded-sm">
           Buy Now

@@ -14,7 +14,7 @@ const NavBar = () => {
   const navigate = useNavigate();
   const location = useLocation();
   useEffect(() => {
-    console.log(location.pathname);
+   
   }, [location]);
 
   function signout() {

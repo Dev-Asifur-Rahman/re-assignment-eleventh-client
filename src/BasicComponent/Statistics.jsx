@@ -85,7 +85,7 @@ const Statistics = () => {
       </div>
 
       <div className=" w-full lg:w-2/5 p-2">
-        <p className="md:w-3/4 md:leading-7 mx-auto p-4 lg:p-6 text-center rounded-md lg:rounded-xl bg-library/15 h-full flex items-center md:font-semibold capitalize">
+        <p className="md:w-3/4 md:leading-7 mx-auto p-4 lg:p-10 text-center rounded-md lg:rounded-xl bg-library/15 h-full flex items-center capitalize">
           Discover the story behind our growing library through insightful
           statistics and reading trends. Explore the total number of books,
           available collections, and popular categories. Track borrowing

@@ -9,7 +9,7 @@ const DataCard = ({ book }) => {
   const { _id, image, name, quantity, author_name, category, rating } = book;
   const myStyles = {
     itemShapes: Star,
-    activeFillColor: "#30d787",
+    activeFillColor: "#10662d",
     inactiveFillColor: "#9fe3ba",
   };
   return (
